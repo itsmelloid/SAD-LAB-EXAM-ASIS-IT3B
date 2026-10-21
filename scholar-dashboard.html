@@ -1,0 +1,22 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Scholar dashboard</title><link rel="stylesheet" href="css/style.css"></head>
+<body><div class="shell">
+<aside class="side"><div class="brand">Scholarship Office</div>
+<div class="profile"><div class="avatar" aria-hidden="true">S</div><div><small>Scholar</small><strong id="who">Loading…</strong></div></div>
+<nav class="nav"><small>MAIN NAVIGATION</small><a class="on" href="#top">Dashboard</a><a href="#submit">Submit grades</a><a href="#history">Submission history</a><a href="#detail">Details and feedback</a></nav></aside>
+<div><header class="top" id="top"><div style="display:flex"><button class="menu" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">&#9776;</button>
+<div><h1>My scholarship</h1><p id="prog">Loading…</p></div></div><button onclick="logout()">Log out</button></header>
+<main><div class="cards"><div class="card"><span>Total submissions</span><b id="c-total">0</b></div><div class="card gold"><span>Pending verification</span><b id="c-pend">0</b></div><div class="card"><span>Verified</span><b id="c-ver">0</b></div><div class="card"><span>Latest compliance</span><b id="c-comp" style="font-size:1.1rem;padding-top:8px">—</b></div></div>
+<div id="msg" class="msg" role="alert"></div>
+<section id="submit"><h2>Submit semester grades</h2><form onsubmit="submitForm(event)"><div class="grid">
+<div><label for="year">Academic year</label><input id="year" placeholder="2026-2027" required></div>
+<div><label for="sem">Semester</label><select id="sem"><option>1</option><option>2</option><option>Summer</option></select></div>
+<div><label for="gwa">GWA (1.00 to 5.00)</label><input id="gwa" type="number" step="0.01" min="1" max="5" required></div>
+<div><label for="units">Enrolled units</label><input id="units" type="number" min="0" step="1" required></div>
+<div><label for="failed">Failed subjects</label><input id="failed" type="number" min="0" step="1" required></div>
+<div><label for="inc">Incomplete grades</label><input id="inc" type="number" min="0" step="1" required></div>
+<div><label for="drop">Dropped subjects</label><input id="drop" type="number" min="0" step="1" required></div>
+<div><label for="ref">Grade-document reference</label><input id="ref" required></div></div><p><button>Submit grades</button></p></form></section>
+<section id="history"><h2>Submission history</h2><div class="wrap"><table><tr><th>Term</th><th>GWA</th><th>Verification</th><th>Compliance</th><th></th></tr><tbody id="rows"><tr><td colspan="5">Loading…</td></tr></tbody></table></div></section>
+<section id="detail" aria-live="polite"><h2>Details and feedback</h2><p style="color:var(--mut)">Select View on a submission to see staff feedback and history.</p></section></main></div></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="js/supabase-config.js"></script><script src="js/validation.js"></script><script src="js/auth.js"></script><script src="js/submissions.js"></script><script src="js/compliance.js"></script><script src="js/scholar.js"></script></body></html>

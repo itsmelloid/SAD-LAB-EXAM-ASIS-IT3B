@@ -1,0 +1,20 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Staff dashboard</title><link rel="stylesheet" href="css/style.css"></head>
+<body><div class="shell">
+<aside class="side"><div class="brand">Scholarship Office</div>
+<div class="profile"><div class="avatar" aria-hidden="true">S</div><div><small>Scholarship staff</small><strong id="who">Loading…</strong></div></div>
+<nav class="nav"><small>MAIN NAVIGATION</small><a class="on" href="#top">Dashboard</a><a href="#subs">Submissions</a><a href="#detail">Review and decide</a><a href="#scholars">Scholar management</a></nav></aside>
+<div><header class="top" id="top"><div style="display:flex"><button class="menu" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">&#9776;</button>
+<div><h1>Scholarship monitoring</h1><p>AY 2026-2027</p></div></div><button onclick="logout()">Log out</button></header>
+<main><div class="cards"><div class="card"><span>Assigned scholars</span><b id="c-total">0</b></div><div class="card gold"><span>Pending verification</span><b id="c-pend">0</b></div><div class="card"><span>Compliant</span><b id="c-ok">0</b></div><div class="card red"><span>With deficiency</span><b id="c-def">0</b></div></div>
+<div id="msg" class="msg" role="alert"></div>
+<section id="subs"><h2>Submissions</h2><div class="toolbar"><input id="q" placeholder="Search student ID or name" oninput="render()" aria-label="Search">
+<select id="f-prog" onchange="render()" aria-label="Program"><option value="">All programs</option></select>
+<select id="f-sem" onchange="render()" aria-label="Semester"><option value="">All semesters</option><option>1</option><option>2</option><option>Summer</option></select>
+<select id="f-comp" onchange="render()" aria-label="Compliance"><option value="">All results</option><option>Not evaluated</option><option>Compliant</option><option>With Deficiency</option></select></div>
+<div class="wrap"><table><tr><th>Student ID</th><th>Name</th><th>Program</th><th>Term</th><th>GWA</th><th>Verification</th><th>Compliance</th><th>Renewal</th><th></th></tr><tbody id="rows"><tr><td colspan="9">Loading…</td></tr></tbody></table></div></section>
+<section id="detail" aria-live="polite"><h2>Review and decide</h2><p style="color:var(--mut)">Select View on a submission to verify evidence, evaluate compliance, or record a renewal decision.</p></section>
+<section id="scholars"><h2>Scholar management</h2><form onsubmit="assign(event)" class="grid"><div><label for="a-who">Scholar account</label><select id="a-who"></select></div>
+<div><label for="a-sid">Student ID</label><input id="a-sid" required></div><div><label for="a-prog">Program</label><select id="a-prog"></select></div><div><label>&nbsp;</label><button>Save assignment</button></div></form>
+<div class="wrap" style="margin-top:12px"><table><tr><th>Student ID</th><th>Name</th><th>Program</th></tr><tbody id="a-rows"></tbody></table></div></section></main></div></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="js/supabase-config.js"></script><script src="js/validation.js"></script><script src="js/auth.js"></script><script src="js/submissions.js"></script><script src="js/compliance.js"></script><script src="js/staff.js"></script></body></html>

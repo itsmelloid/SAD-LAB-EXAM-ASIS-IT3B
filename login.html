@@ -1,0 +1,10 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sign in · Scholarship Monitoring</title><link rel="stylesheet" href="css/style.css"></head>
+<body><div class="login">
+<div class="hero"><i></i><h1>Scholarship Monitoring and Compliance</h1><p>Submit your semester grades, track verification, and see your renewal status in one place.</p></div>
+<div class="form"><form onsubmit="login(event)"><h2>Sign in</h2><p style="color:var(--mut)">Use the email and password for your scholarship account.</p>
+<div id="msg" class="msg" role="alert"></div>
+<label for="email">Email</label><input id="email" type="email" autocomplete="username" required>
+<label for="password">Password</label><input id="password" type="password" autocomplete="current-password" required>
+<p><button style="width:100%;padding:11px">Sign in</button></p></form></div></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="js/supabase-config.js"></script><script src="js/validation.js"></script><script src="js/auth.js"></script></body></html>
