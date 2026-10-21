@@ -1,5 +1,4 @@
 # Student Scholarship Monitoring and Academic Compliance System
-SAD Examination, Section B. Student ID: ____________  Name: ____________
 
 ## 1. Overview
 A browser-based system for two scholarship programs (Excellence Scholar and Access Scholar).
